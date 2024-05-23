@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+
+{% block title %}Lista de blogs{% endblock %}
+
+{% block content %}
+    <div class="blogcontent">
+        <h2 class="main-title">Lista de blogs</h2>
+        <div class="row">
+            {% for blog in blogs %}
+                <div class="col-md-4">
+                    <div class="articulo">
+                        <h5>{{ blog.title }}</h5>
+                        <p>{{ blog.content|slice:":100" }}...</p>
+                        <a href="{% url 'blog_detail' blog.id %}"><button type="button" class="btn btn-outline-secondary">Leer Completo</button></a>
+                        <p>Publicado el: {{ blog.date_posted }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block css %}
+    <style>
+        .blogcontent {
+            width: 90%;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .articulo {
+            background-color: black;
+            color: burlywood;
+            padding: 15px;
+            border: 1px solid white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            box-sizing: border-box;
+            height: 300px; /* Aumenta la altura para asegurar que todo el contenido se muestre */
+            overflow: hidden; /* Oculta el contenido que sobrepasa la altura de la tarjeta */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .articulo h5 {
+            margin: 0;
+            padding: 0;
+            font-size: 1.25rem;
+        }
+
+           .main-title {
+            font-size: 2.5rem; /* Agranda el tamaño del título */
+            margin-bottom: 20px; /* Añade un margen inferior */
+            color: yellow;
+            text-align: center;
+        }
+
+        .articulo p {
+            font-size: 1rem;
+            color: white;
+            margin: 5px 0; /* Ajusta el margen para el contenido */
+        }
+
+        .btn {
+            margin-top: 10px;
+            align-self: flex-start;
+            color: burlywood;
+        }
+
+        .articulo p:last-child {
+            font-size: 0.8rem;
+            color: white;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 0 -10px; /* Ajusta el margen horizontal */
+        }
+
+        .col-md-4 {
+            flex: 0 0 33.33%; /* Ajusta el ancho de todas las columnas */
+            max-width: 33.33%;
+            padding: 0 10px; /* Ajusta el relleno de cada columna */
+            box-sizing: border-box;
+        }
+    </style>
+{% endblock %}

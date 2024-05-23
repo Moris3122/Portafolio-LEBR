@@ -1,0 +1,40 @@
+nav {
+    background-color: rgb(2, 2, 2); 
+    display: flex; 
+    justify-content: center; 
+    height: 70px; 
+    align-items: center;
+}
+
+ul {
+    display: flex; 
+    flex-direction: row;
+}
+
+li {
+    margin: 5px;
+}
+
+a {
+    color: rgb(100, 168, 11);
+    transition: font-size 0.3s, color 0.3s;
+}
+
+a:hover {
+    font-size: 120%;
+    color: rgb(200, 241, 16);
+}
+
+
+/* Cambios en dispositivos móviles */
+@media only screen and (max-width: 600px) {
+    nav {
+        flex-direction: column; /* Cambia la dirección a columna */
+        height: auto; /* Altura automática para adaptarse al contenido */
+    }
+
+    ul {
+        flex-direction: column; /* Cambia la dirección a columna */
+        align-items: center; /* Centra los elementos en la columna */
+    }
+}

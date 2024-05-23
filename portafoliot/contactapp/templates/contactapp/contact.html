@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Contact{% endblock %}
+{% block content %}
+
+<div id="form" class="container mt-6"><br>
+    <h1 style="color:burlywood;">Formulario de Contacto</h1><br>
+    <form method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="id_name" class="form-label" style="color:burlywood;">Nombre</label>
+            {{ form.name }}
+        </div>
+        <div class="mb-3">
+            <label for="id_email" class="form-label" style="color:burlywood;">Dirección Email</label>
+            {{ form.email }}
+        </div>
+        <div class="mb-3">
+            <label for="id_message" class="form-label" style="color:burlywood;">Mensaje</label>
+            {{ form.message }}
+        </div>
+        <button type="submit" class="btn btn-dark" style="color:burlywood;">Enviar</button><br>
+    </form>
+</div>
+{% endblock %}
+
+{% block style %}
+<style>
+    #form {
+        width: 40%;
+    }
+
+    @media (max-width: 768px) {
+        #form {
+            width: 90%;
+        }
+    }
+</style>
+{% endblock %}

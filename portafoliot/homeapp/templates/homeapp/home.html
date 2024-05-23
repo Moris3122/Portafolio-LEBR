@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <div class="container text-center mt-6">
+        <div class="row align-items-center">
+            <div class="col-md-6 order-md-1">
+                <h1 style="font-size: 72px;">Bienvenidos!</h1>
+                <h2 style="font-size: 48px;">Mi nombre es:</h2>
+                <h3 style="font-size: 32px;">Luis Bustos Reyes</h3>
+                 <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=800&duration=7000&pause=1000&color=C5FF1BFD&background: rgb(210,105,234)&center=true&vCenter=true&random=false&width=435&lines=Desarrollador+Full+Stack+Python-Django" alt="Typing SVG" />
+  
+            </div>
+        <div class="col-md-6 order-md-2 d-flex justify-content-center align-items-center" style="padding: 20px;">
+            <img src="{% static 'img/Foto_Mia_PORTAFOLIO.jpg' %}" alt="Perfil" class="img-fluid" style="width: 60%; border-radius: 50%; box-shadow: 0px 0px 20px rgba(106, 21, 162, 0.5);">
+    </div>
+
+        </div>
+         </div>
+{% endblock %}
